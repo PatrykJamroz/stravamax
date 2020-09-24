@@ -67,7 +67,7 @@ class App extends React.Component {
   async componentDidMount() {
     const response = await this.reAuthorize()
     const data = await response.json()
-    const activities_link = `https://www.strava.com/api/v3/athlete/activities?access_token=${data.access_token}`
+    const activities_link = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=50&access_token=${data.access_token}`
     
     
     fetch(activities_link)
