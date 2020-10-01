@@ -36,7 +36,7 @@ function App() {
     const reAuthorizePromise = await reAuthorize()
     const token = await reAuthorizePromise.json()
     //page - page number (default 1), per_page - number of items per page (default 30).
-    const activities_link = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=10&access_token=${token.access_token}`
+    const activities_link = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=20&access_token=${token.access_token}`
     const activitiesPromise = await fetch(activities_link)
     const activitiesData = await activitiesPromise.json()
     setActivities(activitiesData)
