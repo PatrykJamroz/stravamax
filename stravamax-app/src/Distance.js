@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Distance(props) {
-    return (
-        <h3>Your distance: {(props.distance/1000).toFixed(1)}km</h3>
-    )
+  return <h3>Your distance: {(props.distance / 1000).toFixed(1)}km</h3>;
 }
 
-export default Distance
+export default Distance;
