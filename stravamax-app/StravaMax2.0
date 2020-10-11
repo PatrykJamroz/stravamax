@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-11T12:03:10.544Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="MaR-g8ydI4wSH-zZfACQ" version="13.7.9" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-10-11T12:05:22.847Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="HVGVyayE1L7WROpq6szO" version="13.7.9" type="github" pages="3">
   <diagram id="Ql3rlEagQ59yjPL7gf_B" name="&lt;App /&gt;">
     <mxGraphModel dx="1350" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -19,7 +19,21 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="tEYaDMgl9KCVZneWplIL" name="&lt;ActivitiesFeed /&gt;">
+  <diagram id="IjCFk3XdIbzHVcnXmFUY" name="&lt;ActivitiesFreed /&gt;">
+    <mxGraphModel dx="1350" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="AqCChNiTqJtm_03Pr6kS-0" />
+        <mxCell id="AqCChNiTqJtm_03Pr6kS-1" parent="AqCChNiTqJtm_03Pr6kS-0" />
+        <mxCell id="AqCChNiTqJtm_03Pr6kS-2" value="&amp;lt;ActivityItem /&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="AqCChNiTqJtm_03Pr6kS-1">
+          <mxGeometry x="100" y="60" width="660" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="AqCChNiTqJtm_03Pr6kS-3" value="&lt;span&gt;&amp;lt;ActivityItem /&amp;gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="AqCChNiTqJtm_03Pr6kS-1">
+          <mxGeometry x="100" y="425" width="660" height="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="tEYaDMgl9KCVZneWplIL" name="&lt;ActivityItem /&gt;">
     <mxGraphModel dx="1350" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kxNQtmpZ0c11749o_DHb-0" />
