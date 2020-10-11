@@ -6,10 +6,11 @@ import ActivityType from "./ActivityType";
 import MaxHr from "./MaxHr";
 import Distance from "./Distance";
 import ElevationGain from "./ElevationGain";
+import "./ActivityItem.css";
 
 function ActivityItem(props) {
   return (
-    <div>
+    <div className="ActivityItem">
       <ActivityName activityName={props.activityData.name} />
       <ActivityDate activityDate={props.activityData.start_date} />
       <ActivityType activityType={props.activityData.type} />
