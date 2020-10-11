@@ -7,7 +7,7 @@ function MaxSpeed(props) {
     setUnit(unit === "imperial" ? "metric" : "imperial");
   }
 
-  //The maximum speed of this lat, in meters per second
+  //The maximum speed is in meters per second
 
   return (
     <div>
