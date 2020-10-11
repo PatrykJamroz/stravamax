@@ -46,7 +46,6 @@ function ActivitiesFeed() {
       {activities.map((activity) => (
         <div key={activity.id}>
           <ActivityItem activityData={activity} />
-          <hr />
         </div>
       ))}
     </div>
