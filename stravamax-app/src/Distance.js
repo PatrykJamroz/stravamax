@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./Distance.css";
+import "./Button.css";
 
 function Distance(props) {
   const [unit, setUnit] = useState("metric");
@@ -8,14 +10,14 @@ function Distance(props) {
   }
 
   return (
-    <div>
+    <div className="Distance">
       <h3>
         Distance:{" "}
         {unit === "metric"
           ? `${(props.distance / 1000).toFixed(1)} km`
           : `${(props.distance / 1609.344).toFixed(1)} mi`}
       </h3>
-      <button onClick={changeUnit}>
+      <button className="Button" onClick={changeUnit}>
         Change to {unit === "metric" ? "mi" : "km"}
       </button>
     </div>

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./MaxSpeed.css";
+import "./Button.css";
 
 function MaxSpeed(props) {
   const [unit, setUnit] = useState("metric");
@@ -10,14 +12,14 @@ function MaxSpeed(props) {
   //The maximum speed is in meters per second
 
   return (
-    <div>
+    <div className="MaxSpeed">
       <h3>
         Max speed:{" "}
         {unit === "imperial"
           ? `${(props.maxSpeed * 2.24).toFixed(1)} mph`
           : `${(props.maxSpeed * 3.599).toFixed(1)} kmh`}
       </h3>
-      <button onClick={changeUnit}>
+      <button className="Button" onClick={changeUnit}>
         Change to {unit === "metric" ? "mph" : "kmh"}
       </button>
     </div>
