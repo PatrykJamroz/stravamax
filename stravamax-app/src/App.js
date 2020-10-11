@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ActivityName from './ActivityName'
+import ActivityDate from './ActivityDate'
 import Distance from './Distance'
 import MaxSpeed from './MaxSpeed'
 import MaxHr from './MaxHr'
@@ -52,6 +53,7 @@ function App() {
     <div className="App">             
       {activities.map(activity => <div key={activity.id}> 
         <ActivityName activityName={activity.name}/>
+        <ActivityDate activityDate={activity.start_date}/>
         <MaxSpeed maxSpeed = {activity.max_speed}/>
         <MaxHr maxHr = {activity.max_heartrate}/>
         <Distance distance = {activity.distance}/>
