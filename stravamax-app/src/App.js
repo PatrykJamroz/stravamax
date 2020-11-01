@@ -29,13 +29,15 @@ function App() {
 
   async function fetchAllActivities(token) {
     let page = 1;
+    const activities = [];
 
     while (true) {
-      const url = `https://www.strava.com/api/v3/athlete/activities?page=${page}&access_token=${token}`;
+      const url = `https://www.strava.com/api/v3/athlete/activities?per_page=30&page=${page}&access_token=${token}`;
       const response = await fetch(url);
-      const data = response.json();
+      const data = await response.json();
 
       page += 1;
+      //setActivities((oldData) => [...oldData, data]);
       activities.push(...data);
 
       if (data.length < 30) {
