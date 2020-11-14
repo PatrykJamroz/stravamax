@@ -6,9 +6,11 @@ import MaxSpeed from "./MaxSpeed";
 import MaxHr from "./MaxHr";
 import ElevationGain from "./ElevationGain";
 import { crede } from "./crede";
+import ActivityDate from "./ActivityDate";
 
 function App() {
   const [activities, setActivities] = useState([]);
+  const [isFetching, setIsFetching] = useState(true);
 
   const reAuthorize = () => {
     const auth_link = "https://www.strava.com/oauth/token";
@@ -53,10 +55,30 @@ function App() {
     const allActivities = await fetchAllActivities(token.access_token);
     try {
       setActivities(allActivities);
+      setIsFetching(false);
     } catch {
       //
     }
   };
+
+  function sortByMaxHr() {
+    const maxHr = [...activities].sort(
+      (a, b) => b.max_heartrate - a.max_heartrate
+    );
+    setActivities(maxHr);
+  }
+
+  function sortByMaxSpeed() {
+    const maxSpeed = [...activities].sort((a, b) => b.max_speed - a.max_speed);
+    setActivities(maxSpeed);
+  }
+
+  function sortByDistance() {
+    const sortDistance = [...activities].sort(
+      (a, b) => b.distance - a.distance
+    );
+    setActivities(sortDistance);
+  }
 
   //Fetching starts after component is mounted. Second parameter of useEffect prevents infinite loop and strava rate limit exceeding.
   useEffect(() => {
@@ -65,9 +87,16 @@ function App() {
 
   return (
     <div className="App">
+      <button onClick={sortByMaxHr}>Sort by Max HR</button>
+      <button onClick={sortByMaxSpeed}>Sort by Max Speed</button>
+      <button onClick={sortByDistance}>Sort by Distance</button>
+      <h3 style={{ display: isFetching ? "block" : "none" }}>
+        Fetching all activities, please wait...
+      </h3>
       {activities.map((activity) => (
         <div key={activity.id}>
           <ActivityName activityName={activity.name} />
+          <ActivityDate activityDate={activity.start_date} />
           <MaxSpeed maxSpeed={activity.max_speed} />
           <MaxHr maxHr={activity.max_heartrate} />
           <Distance distance={activity.distance} />
