@@ -102,7 +102,7 @@ function App() {
           <Distance distance={activity.distance} />
           <ElevationGain elevationGain={activity.total_elevation_gain} />
           <a href={`https://www.strava.com/activities/${activity.id}`}>
-            <p>Go to the activity</p>
+            <p>Go to activity</p>
           </a>
           <hr />
         </div>
