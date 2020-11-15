@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ActivitiesFeed from "./ActivitiesFeed";
-import NavBar from "./NavBar";
+import ActivitiesFeed from "./components/ActivitiesFeed";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (

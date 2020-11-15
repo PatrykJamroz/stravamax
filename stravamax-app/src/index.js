@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { ContextProvider } from "./Context";
 import * as serviceWorker from "./serviceWorker";
+import { format } from "prettier";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ContextProvider>
     <App />
-  </React.StrictMode>,
+  </ContextProvider>,
   document.getElementById("root")
 );
 

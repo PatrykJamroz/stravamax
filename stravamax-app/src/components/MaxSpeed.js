@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./MaxSpeed.css";
-import "./Button.css";
+import "../styles/MaxSpeed.css";
+import "../styles/Button.css";
 
 function MaxSpeed(props) {
   const [unit, setUnit] = useState("metric");

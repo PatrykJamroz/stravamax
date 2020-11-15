@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Distance.css";
-import "./Button.css";
+import "../styles/Distance.css";
+import "../styles/Button.css";
 
 function Distance(props) {
   const [unit, setUnit] = useState("metric");
