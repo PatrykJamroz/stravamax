@@ -5,6 +5,7 @@ const Context = React.createContext();
 
 function ContextProvider({ children }) {
   const [activities, setActivities] = useState([]);
+  const [isFetching, setIsFetching] = useState(true);
 
   //Fetching activities from Strava and saving it to the state.
   const getActivities = async () => {
@@ -12,6 +13,7 @@ function ContextProvider({ children }) {
     const token = await reAuthorizePromise.json();
     const allActivities = await fetchAllActivities(token.access_token);
     try {
+      setIsFetching(false);
       setActivities(allActivities);
     } catch {
       //
@@ -59,7 +61,11 @@ function ContextProvider({ children }) {
     getActivities();
   }, []);
 
-  return <Context.Provider value={{ activities }}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ activities, isFetching }}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 export { ContextProvider, Context };
