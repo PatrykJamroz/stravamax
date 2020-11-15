@@ -19,7 +19,10 @@ function ActivityItem(props) {
       <MaxHr maxHr={props.activityData.max_heartrate} />
       <Distance distance={props.activityData.distance} />
       <ElevationGain elevationGain={props.activityData.total_elevation_gain} />
-      <a href={`https://www.strava.com/activities/${props.activityData.id}`}>
+      <a
+        style={{ color: "whitesmoke", textDecoration: "none" }}
+        href={`https://www.strava.com/activities/${props.activityData.id}`}
+      >
         Go to activity
       </a>
     </div>

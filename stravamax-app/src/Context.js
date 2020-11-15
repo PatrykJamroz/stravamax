@@ -7,6 +7,10 @@ function ContextProvider({ children }) {
   const [activities, setActivities] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
 
+  function scrollOnTop() {
+    document.documentElement.scrollTop = 0;
+  }
+
   //Fetching activities from Strava and saving it to the state.
   const getActivities = async () => {
     const reAuthorizePromise = await reAuthorize();
@@ -62,7 +66,7 @@ function ContextProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={{ activities, isFetching }}>
+    <Context.Provider value={{ activities, isFetching, scrollOnTop }}>
       {children}
     </Context.Provider>
   );
