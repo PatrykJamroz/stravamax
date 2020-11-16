@@ -11,6 +11,32 @@ function ContextProvider({ children }) {
     document.documentElement.scrollTop = 0;
   }
 
+  function filterRides() {
+    const onlyRides = activities.filter((activity) => activity.type === "Ride");
+    setActivities(onlyRides);
+  }
+
+  function filterRuns() {
+    const onlyRuns = activities.filter((activity) => activity.type === "Run");
+    setActivities(onlyRuns);
+  }
+
+  function clearFilters() {}
+
+  function sortByMaxSpeed() {
+    const byMaxSpeed = [...activities].sort(
+      (a, b) => b.max_speed - a.max_speed
+    );
+    setActivities(byMaxSpeed);
+  }
+
+  function sortByMaxHr() {
+    const byMaxHr = [...activities].sort(
+      (a, b) => b.max_heartrate - a.max_heartrate
+    );
+    setActivities(byMaxHr);
+  }
+
   //Fetching activities from Strava and saving it to the state.
   const getActivities = async () => {
     const reAuthorizePromise = await reAuthorize();
@@ -66,7 +92,18 @@ function ContextProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={{ activities, isFetching, scrollOnTop }}>
+    <Context.Provider
+      value={{
+        activities,
+        isFetching,
+        scrollOnTop,
+        filterRides,
+        filterRuns,
+        clearFilters,
+        sortByMaxSpeed,
+        sortByMaxHr,
+      }}
+    >
       {children}
     </Context.Provider>
   );
