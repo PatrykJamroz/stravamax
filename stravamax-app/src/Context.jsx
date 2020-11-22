@@ -1,42 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useMemo} from "react";
 import { crede } from "./crede.js";
 
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
   const [activities, setActivities] = useState([]);
-  const [onlyRides, setOnlyRides] = useState([]);
-  const [onlyRuns, setOnlyRuns] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
   const [fetchFailed, setFetchFailed] = useState(false);
+  const [filterType, setFilterType] = useState('');
 
   function scrollOnTop() {
     document.documentElement.scrollTop = 0;
   }
-  //old ones
-  /*function filterRides() {
-    const onlyRides = [...activities].filter(
-      (activity) => activity.type === "Ride"
-    );
-    setActivities(onlyRides);
+
+  function filterByRides() {
+    setFilterType('Ride')
   }
 
-  function filterRuns() {
-    const onlyRuns = [...activities].filter(
-      (activity) => activity.type === "Run"
-    );
-    setActivities(onlyRuns);
-  }*/
-
-  function filterRides() {
-    setOnlyRides(activities.filter((activity) => activity.type === "Ride"));
+  function filterByRuns() {
+    setFilterType('Run')
   }
 
-  function filterRuns() {
-    setOnlyRuns(activities.filter((activity) => activity.type === "Run"));
+  function clearFilters() {
+    setFilterType('')
   }
-
-  function clearFilters() {}
 
   function sortByMaxSpeed() {
     const byMaxSpeed = [...activities].sort(
@@ -106,15 +93,19 @@ function ContextProvider({ children }) {
     getActivities();
   }, []);
 
+  const filteredActivities = useMemo(() => {
+    return filterType ? activities.filter(activity => activity.type === filterType) : activities;
+  }, [filterType, activities])
+
   return (
     <Context.Provider
       value={{
-        activities,
+        activities: filteredActivities,
         isFetching,
         fetchFailed,
         scrollOnTop,
-        filterRides,
-        filterRuns,
+        filterByRides,
+        filterByRuns,
         clearFilters,
         sortByMaxSpeed,
         sortByMaxHr,

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
 
-function Filters() {
+export function Filters() {
   const {
-    filterRides,
-    filterRuns,
+    filterByRuns,
+    filterByRides,
     clearFilters,
     sortByMaxSpeed,
     sortByMaxHr,
@@ -13,8 +13,8 @@ function Filters() {
     <div>
       <label>
         <button onClick={clearFilters}>All</button>
-        <button onClick={filterRuns}>Run</button>
-        <button onClick={filterRides}>Ride</button>
+        <button onClick={filterByRuns}>Run</button>
+        <button onClick={filterByRides}>Ride</button>
       </label>
       <br />
       <label>
@@ -25,4 +25,4 @@ function Filters() {
   );
 }
 
-export default Filters;
+// export default Filters;
