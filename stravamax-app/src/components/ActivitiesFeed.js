@@ -4,7 +4,7 @@ import ActivityItem from "./ActivityItem";
 import { Context } from "../Context";
 
 function ActivitiesFeed() {
-  const { activities, isFetching } = useContext(Context);
+  const { activities, isFetching, fetchFailed } = useContext(Context);
 
   return (
     <div className="ActivitiesFeed">
@@ -15,6 +15,14 @@ function ActivitiesFeed() {
         }}
       >
         Keep calm, data is fetching...
+      </p>
+      <p
+        style={{
+          display: fetchFailed ? "block" : "none",
+          textAlign: "center",
+        }}
+      >
+        Fetch failed. Wait 15mins or check credentials.
       </p>
       {activities.map((activity) => (
         <div key={activity.id}>

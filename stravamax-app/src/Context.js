@@ -5,20 +5,35 @@ const Context = React.createContext();
 
 function ContextProvider({ children }) {
   const [activities, setActivities] = useState([]);
+  const [onlyRides, setOnlyRides] = useState([]);
+  const [onlyRuns, setOnlyRuns] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
+  const [fetchFailed, setFetchFailed] = useState(false);
 
   function scrollOnTop() {
     document.documentElement.scrollTop = 0;
   }
-
-  function filterRides() {
-    const onlyRides = activities.filter((activity) => activity.type === "Ride");
+  //old ones
+  /*function filterRides() {
+    const onlyRides = [...activities].filter(
+      (activity) => activity.type === "Ride"
+    );
     setActivities(onlyRides);
   }
 
   function filterRuns() {
-    const onlyRuns = activities.filter((activity) => activity.type === "Run");
+    const onlyRuns = [...activities].filter(
+      (activity) => activity.type === "Run"
+    );
     setActivities(onlyRuns);
+  }*/
+
+  function filterRides() {
+    setOnlyRides(activities.filter((activity) => activity.type === "Ride"));
+  }
+
+  function filterRuns() {
+    setOnlyRuns(activities.filter((activity) => activity.type === "Run"));
   }
 
   function clearFilters() {}
@@ -46,7 +61,7 @@ function ContextProvider({ children }) {
       setIsFetching(false);
       setActivities(allActivities);
     } catch {
-      //
+      setFetchFailed(true);
     }
   };
 
@@ -96,6 +111,7 @@ function ContextProvider({ children }) {
       value={{
         activities,
         isFetching,
+        fetchFailed,
         scrollOnTop,
         filterRides,
         filterRuns,
