@@ -3,8 +3,8 @@ import { Context } from "../Context";
 
 function Filters() {
   const {
-    filterRides,
-    filterRuns,
+    filterByRide,
+    filterByRun,
     clearFilters,
     sortByMaxSpeed,
     sortByMaxHr,
@@ -13,8 +13,8 @@ function Filters() {
     <div>
       <label>
         <button onClick={clearFilters}>All</button>
-        <button onClick={filterRuns}>Run</button>
-        <button onClick={filterRides}>Ride</button>
+        <button onClick={filterByRun}>Run</button>
+        <button onClick={filterByRide}>Ride</button>
       </label>
       <br />
       <label>
