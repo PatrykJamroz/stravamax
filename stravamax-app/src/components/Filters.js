@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
+import styled from "styled-components";
 
 function Filters() {
   const {
@@ -8,18 +9,19 @@ function Filters() {
     clearFilters,
     sortByMaxSpeed,
     sortByMaxHr,
+    Button,
   } = useContext(Context);
   return (
     <div>
       <label>
-        <button onClick={clearFilters}>All</button>
-        <button onClick={filterByRun}>Run</button>
-        <button onClick={filterByRide}>Ride</button>
+        <Button onClick={clearFilters}>All</Button>
+        <Button onClick={filterByRun}>Run</Button>
+        <Button onClick={filterByRide}>Ride</Button>
       </label>
       <br />
       <label>
-        <button onClick={sortByMaxSpeed}>Sort by Max Speed</button>
-        <button onClick={sortByMaxHr}>Sort by Max HR</button>
+        <Button onClick={sortByMaxSpeed}>Sort by Max Speed</Button>
+        <Button onClick={sortByMaxHr}>Sort by Max HR</Button>
       </label>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { crede } from "./crede.js";
+import styled, { css } from "styled-components";
 
 const Context = React.createContext();
 
@@ -99,7 +100,19 @@ function ContextProvider({ children }) {
       : activities;
   }, [activities, filterType]);
 
-  //activities.filter((activity) => activity.type === "Ride"));
+  //styled components
+
+  const Button = styled.button`
+    padding: 1em;
+    margin-left: 2em;
+    background-color: whitesmoke;
+    font-weight: 700;
+    color: #fc4c02;
+    border: none;
+    border-radius: 1.5em;
+    height: 3em;
+  }
+    `;
 
   return (
     <Context.Provider
@@ -113,6 +126,7 @@ function ContextProvider({ children }) {
         clearFilters,
         sortByMaxSpeed,
         sortByMaxHr,
+        Button,
       }}
     >
       {children}
