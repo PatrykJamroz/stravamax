@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Logo from "../Logo";
 
 export const Button = styled.button`
   padding: 1em;
@@ -11,8 +12,6 @@ export const Button = styled.button`
   height: 3em;
   text-decoration: none;
   margin-bottom: 1em;
-  display: "flex";
-  flex-direction: row;
 `;
 
 export const ButtonRed = styled.button`
@@ -26,6 +25,26 @@ export const ButtonRed = styled.button`
   height: 3em;
   text-decoration: none;
   margin-bottom: 1em;
-  display: "flex";
+  display: flex;
   flex-direction: row;
+`;
+
+export const ButtonTop = styled.button`
+  padding: 1em;
+  background-color: #fc4c02;
+  font-weight: 700;
+  color: whitesmoke;
+  border-radius: 1.5em;
+  height: 4em;
+  text-decoration: none;
+  margin-bottom: 1em;
+  @media (max-width: 670px) {
+    background-color: whitesmoke;
+    color: #fc4c02;
+    border: 0.5px solid black;
+  }
+`;
+
+export const LogoTitle = styled.h1`
+  font-family: "Michroma", sans-serif;
 `;

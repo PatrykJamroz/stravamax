@@ -1,6 +1,7 @@
 import React from "react";
+import { LogoTitle } from "./components/StyledComponents";
 
 function Logo() {
-  return <h1>StravaMAX</h1>;
+  return <LogoTitle>StravaMAX</LogoTitle>;
 }
 export default Logo;

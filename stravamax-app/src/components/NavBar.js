@@ -3,7 +3,7 @@ import Logo from "../Logo";
 import Filters from "./Filters";
 import "../styles/NavBar.css";
 import { Link } from "react-router-dom";
-import { Button } from "./Button";
+import { Button } from "./StyledComponents";
 
 function NavBar() {
   return (

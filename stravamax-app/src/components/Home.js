@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, ButtonRed } from "./Button";
+import { Button, ButtonRed } from "./StyledComponents";
 
 export default function Home() {
   return (

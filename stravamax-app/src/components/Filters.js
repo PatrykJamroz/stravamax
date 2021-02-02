@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
-import { Button } from "./Button";
+import { Button } from "./StyledComponents";
 
 function Filters() {
   const {

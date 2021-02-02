@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import { Context } from "./Context";
 import { useContext } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import { Button } from "./components/Button";
+import { ButtonTop } from "./components/StyledComponents";
 
 function App() {
   const { scrollOnTop } = useContext(Context);
@@ -18,18 +18,16 @@ function App() {
         <Route path="/activities">
           <NavBar />
           <ActivitiesFeed />
-          <Button
+          <ButtonTop
             style={{
               position: "fixed",
               bottom: "20px",
               right: "30px",
-              backgroundColor: "#fc4c02",
-              color: "whitesmoke",
             }}
             onClick={scrollOnTop}
           >
             TOP
-          </Button>
+          </ButtonTop>
         </Route>
       </Switch>
     </div>
