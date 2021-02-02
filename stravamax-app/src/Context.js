@@ -44,7 +44,7 @@ function ContextProvider({ children }) {
   const getActivities = async () => {
     const reAuthorizePromise = await reAuthorize();
     const token = await reAuthorizePromise.json();
-    const allActivities = await fetchAllActivities(token.access_token);
+    const allActivities = await fetchFewActivities(token.access_token); // fetchAllActivities / fetchFewActivities
     try {
       setIsFetching(false);
       setActivities(allActivities);
@@ -89,6 +89,17 @@ function ContextProvider({ children }) {
       }
     }
   }
+
+  //FETCH ONLY FEW ACTIVITIES - FOR DEVELOPMENT - TO NOT EXCEED STRAVA LIMITS//
+
+  async function fetchFewActivities(token) {
+    const url = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=10&access_token=${token}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     getActivities();
