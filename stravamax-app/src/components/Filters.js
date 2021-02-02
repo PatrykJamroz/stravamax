@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
-import styled from "styled-components";
+import { Button } from "./Button";
 
 function Filters() {
   const {
@@ -9,8 +9,8 @@ function Filters() {
     clearFilters,
     sortByMaxSpeed,
     sortByMaxHr,
-    Button,
   } = useContext(Context);
+
   return (
     <div>
       <label>

@@ -102,7 +102,7 @@ function ContextProvider({ children }) {
 
   //styled components
 
-  const Button = styled.button`
+  /*const Button = styled.button`
     padding: 1em;
     margin-left: 2em;
     background-color: whitesmoke;
@@ -111,8 +111,7 @@ function ContextProvider({ children }) {
     border: none;
     border-radius: 1.5em;
     height: 3em;
-  }
-    `;
+  `;*/
 
   return (
     <Context.Provider
@@ -126,7 +125,7 @@ function ContextProvider({ children }) {
         clearFilters,
         sortByMaxSpeed,
         sortByMaxHr,
-        Button,
+        //Button,
       }}
     >
       {children}
