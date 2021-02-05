@@ -4,7 +4,10 @@ import { ItemParagraphs } from "./StyledComponents";
 function ElevationGain(props) {
   return (
     <ItemParagraphs>
-      <img src="https://img.icons8.com/ios-filled/24/000000/mountain.png" />{" "}
+      <img
+        style={{ verticalAlign: "middle" }}
+        src="https://img.icons8.com/ios-filled/24/ffffff/mountain.png"
+      />{" "}
       Elevation gain: {props.elevationGain} m
     </ItemParagraphs>
   );
