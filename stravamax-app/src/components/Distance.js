@@ -11,6 +11,7 @@ function Distance(props) {
   return (
     <Container>
       <ItemParagraphs style={{ marginBottom: 0 }}>
+        <img src="https://img.icons8.com/ios-filled/24/000000/ruler.png" />{" "}
         Distance:{" "}
         {unit === "metric"
           ? `${(props.distance / 1000).toFixed(1)} km`

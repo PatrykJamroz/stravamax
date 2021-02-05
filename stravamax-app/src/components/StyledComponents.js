@@ -50,7 +50,7 @@ export const ConvertButton = styled(Button)`
   background-color: whitesmoke;
   color: #fc4c02;
   margin: 0 0 0 2em;
-  width: 150px;
+  width: 120px;
   font-size: 0.75rem;
   vertical-align: middle;
 `;

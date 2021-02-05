@@ -18,7 +18,8 @@ function ActivityDate(props) {
 
   return (
     <ItemParagraphsDate>
-      {new Date(props.activityDate).toLocaleString([], options)}
+      <img src="https://img.icons8.com/ios-filled/16/000000/calendar--v1.png" />{" "}
+      {new Date(props.activityDate).toLocaleString("en-GB", options)}
     </ItemParagraphsDate>
   );
 }

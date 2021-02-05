@@ -13,7 +13,8 @@ function MaxSpeed(props) {
   return (
     <Container>
       <ItemParagraphs style={{ marginBottom: 0 }}>
-        Max speed:{" "}
+        <img src="https://img.icons8.com/ios-filled/24/000000/speed.png" /> Max
+        speed:{" "}
         {unit === "imperial"
           ? `${(props.maxSpeed * 2.24).toFixed(1)} mph`
           : `${(props.maxSpeed * 3.599).toFixed(1)} kmh`}
