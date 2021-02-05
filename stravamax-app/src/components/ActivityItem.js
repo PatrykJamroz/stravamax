@@ -6,12 +6,21 @@ import ActivityType from "./ActivityType";
 import MaxHr from "./MaxHr";
 import Distance from "./Distance";
 import ElevationGain from "./ElevationGain";
-import "../styles/ActivityItem.css";
 import { Context } from "../Context";
+import styled from "styled-components";
+
+const Item = styled.div`
+  background-color: #fc4c02;
+  color: whitesmoke;
+  margin: 0 auto 10px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 10px;
+`;
 
 function ActivityItem(props) {
   return (
-    <div className="ActivityItem">
+    <Item>
       <ActivityName activityName={props.activityData.name} />
       <ActivityDate activityDate={props.activityData.start_date} />
       <ActivityType activityType={props.activityData.type} />
@@ -25,7 +34,7 @@ function ActivityItem(props) {
       >
         Go to activity
       </a>
-    </div>
+    </Item>
   );
 }
 

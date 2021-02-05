@@ -93,7 +93,7 @@ function ContextProvider({ children }) {
   //FETCH ONLY FEW ACTIVITIES - FOR DEVELOPMENT - TO NOT EXCEED STRAVA LIMITS//
 
   async function fetchFewActivities(token) {
-    const url = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=10&access_token=${token}`;
+    const url = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=30&access_token=${token}`;
     const response = await fetch(url);
     const data = await response.json();
     return data;

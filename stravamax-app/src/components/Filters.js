@@ -1,6 +1,20 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
-import { Button } from "./StyledComponents";
+import styled from "styled-components";
+
+const Button = styled.button`
+  padding: 1em;
+  margin-right: 2em;
+  background-color: #fc4c02;
+  font-weight: 700;
+  color: whitesmoke;
+  border: none;
+  border-radius: 1.5em;
+  height: 3em;
+  text-decoration: none;
+  margin-bottom: 1em;
+  outline: none;
+`;
 
 function Filters() {
   const {

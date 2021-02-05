@@ -12,21 +12,7 @@ export const Button = styled.button`
   height: 3em;
   text-decoration: none;
   margin-bottom: 1em;
-`;
-
-export const ButtonRed = styled.button`
-  padding: 1em;
-  margin-right: 2em;
-  background-color: red;
-  font-weight: 700;
-  color: whitesmoke;
-  border: none;
-  border-radius: 1.5em;
-  height: 3em;
-  text-decoration: none;
-  margin-bottom: 1em;
-  display: flex;
-  flex-direction: row;
+  outline: none;
 `;
 
 export const ButtonTop = styled.button`
@@ -38,6 +24,7 @@ export const ButtonTop = styled.button`
   height: 4em;
   text-decoration: none;
   margin-bottom: 1em;
+  outline: none;
   @media (max-width: 670px) {
     background-color: whitesmoke;
     color: #fc4c02;
@@ -47,4 +34,18 @@ export const ButtonTop = styled.button`
 
 export const LogoTitle = styled.h1`
   font-family: "Michroma", sans-serif;
+  color: #fc4c02;
+  margin: 0 auto 10px auto;
+  text-align: center;
+`;
+
+export const ConvertButton = styled.button`
+  padding: 1em;
+  margin-left: 2em;
+  background-color: whitesmoke;
+  font-weight: 700;
+  color: #fc4c02;
+  border: none;
+  border-radius: 1.5em;
+  height: 3em;
 `;
