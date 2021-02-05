@@ -1,7 +1,8 @@
 import React from "react";
+import { ItemParagraphs } from "./StyledComponents";
 
 function ActivityType(props) {
-  return <h3>Activity type: {props.activityType}</h3>;
+  return <ItemParagraphs>Activity type: {props.activityType}</ItemParagraphs>;
 }
 
 export default ActivityType;

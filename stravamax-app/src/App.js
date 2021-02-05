@@ -6,11 +6,17 @@ import { Context } from "./Context";
 import { useContext } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import { ButtonTop } from "./components/StyledComponents";
+import styled from "styled-components";
+
+const AppBody = styled.div`
+  font-family: arial;
+  font-sieze: 16px;
+`;
 
 function App() {
   const { scrollOnTop } = useContext(Context);
   return (
-    <div className="App">
+    <AppBody className="App">
       <Switch>
         <Route exact path="/">
           <Home />
@@ -30,7 +36,7 @@ function App() {
           </ButtonTop>
         </Route>
       </Switch>
-    </div>
+    </AppBody>
   );
 }
 

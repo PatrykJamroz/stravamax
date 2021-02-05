@@ -1,7 +1,10 @@
 import React from "react";
+import { ItemParagraphs } from "./StyledComponents";
 
 function ElevationGain(props) {
-  return <h3>Elevation gain: {props.elevationGain} m</h3>;
+  return (
+    <ItemParagraphs>Elevation gain: {props.elevationGain} m</ItemParagraphs>
+  );
 }
 
 export default ElevationGain;

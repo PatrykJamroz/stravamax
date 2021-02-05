@@ -136,7 +136,6 @@ function ContextProvider({ children }) {
         clearFilters,
         sortByMaxSpeed,
         sortByMaxHr,
-        //Button,
       }}
     >
       {children}

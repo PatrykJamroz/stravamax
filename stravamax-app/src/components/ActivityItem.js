@@ -6,16 +6,22 @@ import ActivityType from "./ActivityType";
 import MaxHr from "./MaxHr";
 import Distance from "./Distance";
 import ElevationGain from "./ElevationGain";
-import { Context } from "../Context";
 import styled from "styled-components";
 
 const Item = styled.div`
   background-color: #fc4c02;
   color: whitesmoke;
   margin: 0 auto 10px auto;
-  max-width: 500px;
+  max-width: 480px;
   border-radius: 10px;
   padding: 10px;
+`;
+
+const ActivityURL = styled.div`
+  margin: 0;
+  font-family: helvetica;
+  font-size: 0.75rem;
+  font-weight: 300;
 `;
 
 function ActivityItem(props) {
@@ -28,12 +34,20 @@ function ActivityItem(props) {
       <MaxHr maxHr={props.activityData.max_heartrate} />
       <Distance distance={props.activityData.distance} />
       <ElevationGain elevationGain={props.activityData.total_elevation_gain} />
-      <a
-        style={{ color: "whitesmoke", textDecoration: "none" }}
-        href={`https://www.strava.com/activities/${props.activityData.id}`}
-      >
-        Go to activity
-      </a>
+      <ActivityURL>
+        <a
+          style={{
+            color: "whitesmoke",
+            textDecoration: "none",
+            textDecoration: "underline",
+          }}
+          href={`https://www.strava.com/activities/${props.activityData.id}`}
+          target="_blank"
+        >
+          {" "}
+          Go to activity
+        </a>
+      </ActivityURL>
     </Item>
   );
 }
