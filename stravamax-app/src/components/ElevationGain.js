@@ -1,13 +1,10 @@
 import React from "react";
-import { ItemParagraphs } from "./StyledComponents";
+import { ItemParagraphs, IconImg } from "./StyledComponents";
 
 function ElevationGain(props) {
   return (
     <ItemParagraphs>
-      <img
-        style={{ verticalAlign: "middle" }}
-        src="https://img.icons8.com/ios-filled/24/ffffff/mountain.png"
-      />{" "}
+      <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/mountain.png" />
       Elevation gain: {props.elevationGain} m
     </ItemParagraphs>
   );

@@ -3,7 +3,7 @@ import Logo from "../Logo";
 import Filters from "./Filters";
 
 import { Link } from "react-router-dom";
-import { Button } from "./StyledComponents";
+import { Button, IconImg } from "./StyledComponents";
 import styled from "styled-components";
 
 const Nav = styled.div`
@@ -27,7 +27,10 @@ function NavBar() {
       <Logo />
       <Filters />
       <Link to="/" style={{ textDecoration: "none" }}>
-        <ButtonHome>Home</ButtonHome>
+        <ButtonHome>
+          <IconImg src="https://img.icons8.com/material-rounded/20/ffffff/home.png" />
+          Home
+        </ButtonHome>
       </Link>
     </Nav>
   );

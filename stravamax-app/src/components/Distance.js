@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { ConvertButton, ItemParagraphs, Container } from "./StyledComponents";
+import {
+  ConvertButton,
+  ItemParagraphs,
+  Container,
+  IconImg,
+} from "./StyledComponents";
 
 function Distance(props) {
   const [unit, setUnit] = useState("metric");
@@ -11,10 +16,7 @@ function Distance(props) {
   return (
     <Container>
       <ItemParagraphs style={{ marginBottom: 0 }}>
-        <img
-          style={{ verticalAlign: "middle" }}
-          src="https://img.icons8.com/ios-filled/24/ffffff/ruler.png"
-        />{" "}
+        <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/ruler.png" />
         Distance:{" "}
         {unit === "metric"
           ? `${(props.distance / 1000).toFixed(1)} km`

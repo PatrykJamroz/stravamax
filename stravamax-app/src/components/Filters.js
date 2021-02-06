@@ -1,12 +1,23 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
 import styled from "styled-components";
-import { Button } from "./StyledComponents";
+import { Button, IconImg } from "./StyledComponents";
 
 const ButtonFilters = styled(Button)`
   @media (min-width: 376px) {
-    margin-right: 1em;
     display: inline;
+  }
+`;
+
+const ButtonFiltersMid = styled(ButtonFilters)`
+  @media (min-width: 376px) {
+    margin: 0 0.5em;
+  }
+`;
+
+const ButtonFiltersLeft = styled(ButtonFilters)`
+  @media (min-width: 376px) {
+    margin: 0 0.5em 0 0;
   }
 `;
 
@@ -23,40 +34,25 @@ function Filters() {
     <div>
       <div>
         <ButtonFilters onClick={clearFilters}>
-          <img
-            style={{ verticalAlign: "middle" }}
-            src="https://img.icons8.com/ios-filled/24/ffffff/pulse.png"
-          />{" "}
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/pulse.png" />
           All
         </ButtonFilters>
-        <ButtonFilters onClick={filterByRun}>
-          <img
-            style={{ verticalAlign: "middle" }}
-            src="https://img.icons8.com/ios-filled/24/ffffff/running.png"
-          />{" "}
+        <ButtonFiltersMid onClick={filterByRun}>
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/running.png" />
           Run
-        </ButtonFilters>
+        </ButtonFiltersMid>
         <ButtonFilters onClick={filterByRide}>
-          <img
-            style={{ verticalAlign: "middle" }}
-            src="https://img.icons8.com/ios-filled/24/ffffff/cycling-road--v1.png"
-          />{" "}
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/cycling-road--v1.png" />
           Ride
         </ButtonFilters>
       </div>
       <div>
-        <ButtonFilters onClick={sortByMaxSpeed}>
-          <img
-            style={{ verticalAlign: "middle" }}
-            src="https://img.icons8.com/ios-filled/24/ffffff/speed.png"
-          />{" "}
+        <ButtonFiltersLeft onClick={sortByMaxSpeed}>
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/speed.png" />
           Sort by Max Speed
-        </ButtonFilters>
+        </ButtonFiltersLeft>
         <ButtonFilters onClick={sortByMaxHr}>
-          <img
-            style={{ verticalAlign: "middle" }}
-            src="https://img.icons8.com/ios-filled/24/ffffff/heart-with-pulse--v1.png"
-          />{" "}
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/heart-with-pulse--v1.png" />
           Sort by Max HR
         </ButtonFilters>
       </div>

@@ -2,12 +2,12 @@ import styled from "styled-components";
 import Logo from "../Logo";
 
 export const Button = styled.button`
-  padding: 0 1em 0 1em;
+  padding: 0 0.75em 0 0.75em;
   background-color: #fc4c02;
   font-weight: 700;
   font-family: helvetica;
-  font-size: 1rem;
-  color: whitesmoke;
+  font-size: 1.25rem;
+  color: white;
   border: none;
   border-radius: 1.5em;
   height: 2rem;
@@ -47,7 +47,7 @@ export const LogoTitle = styled.h1`
 `;
 
 export const ConvertButton = styled(Button)`
-  background-color: whitesmoke;
+  background-color: white;
   color: #fc4c02;
   margin: 0 0 0 2em;
   width: 120px;
@@ -60,10 +60,16 @@ export const ItemParagraphs = styled.p`
   font-family: helvetica;
   font-size: 1rem;
   font-weight: 600;
+  color: white;
 `;
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1em;
+`;
+
+export const IconImg = styled.img`
+  vertical-align: middle;
+  margin: 0 0.5em 3px 0;
 `;

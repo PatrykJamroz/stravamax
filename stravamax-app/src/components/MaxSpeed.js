@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { ConvertButton, ItemParagraphs, Container } from "./StyledComponents";
+import {
+  ConvertButton,
+  ItemParagraphs,
+  Container,
+  IconImg,
+} from "./StyledComponents";
 
 function MaxSpeed(props) {
   const [unit, setUnit] = useState("metric");
@@ -13,10 +18,7 @@ function MaxSpeed(props) {
   return (
     <Container>
       <ItemParagraphs style={{ marginBottom: 0 }}>
-        <img
-          style={{ verticalAlign: "middle" }}
-          src="https://img.icons8.com/ios-filled/24/ffffff/speed.png"
-        />{" "}
+        <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/speed.png" />
         Max speed:{" "}
         {unit === "imperial"
           ? `${(props.maxSpeed * 2.24).toFixed(1)} mph`
