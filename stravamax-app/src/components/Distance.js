@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import "../styles/Distance.css";
-import "../styles/Button.css";
+import {
+  ConvertButton,
+  ItemParagraphs,
+  Container,
+  IconImg,
+} from "./StyledComponents";
 
 function Distance(props) {
   const [unit, setUnit] = useState("metric");
@@ -10,17 +14,18 @@ function Distance(props) {
   }
 
   return (
-    <div className="Distance">
-      <h3>
+    <Container>
+      <ItemParagraphs style={{ marginBottom: 0 }}>
+        <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/ruler.png" />
         Distance:{" "}
         {unit === "metric"
           ? `${(props.distance / 1000).toFixed(1)} km`
           : `${(props.distance / 1609.344).toFixed(1)} mi`}
-      </h3>
-      <button className="Button" onClick={changeUnit}>
+      </ItemParagraphs>
+      <ConvertButton onClick={changeUnit}>
         Change to {unit === "metric" ? "mi" : "km"}
-      </button>
-    </div>
+      </ConvertButton>
+    </Container>
   );
 }
 

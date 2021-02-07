@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { crede } from "./crede.js";
+import styled, { css } from "styled-components";
 
 const Context = React.createContext();
 
@@ -43,7 +44,7 @@ function ContextProvider({ children }) {
   const getActivities = async () => {
     const reAuthorizePromise = await reAuthorize();
     const token = await reAuthorizePromise.json();
-    const allActivities = await fetchAllActivities(token.access_token);
+    const allActivities = await fetchFewActivities(token.access_token); // fetchAllActivities / fetchFewActivities
     try {
       setIsFetching(false);
       setActivities(allActivities);
@@ -89,6 +90,17 @@ function ContextProvider({ children }) {
     }
   }
 
+  //FETCH ONLY FEW ACTIVITIES - FOR DEVELOPMENT - TO NOT EXCEED STRAVA LIMITS//
+
+  async function fetchFewActivities(token) {
+    const url = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=30&access_token=${token}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+
   useEffect(() => {
     getActivities();
   }, []);
@@ -99,7 +111,18 @@ function ContextProvider({ children }) {
       : activities;
   }, [activities, filterType]);
 
-  //activities.filter((activity) => activity.type === "Ride"));
+  //styled components
+
+  /*const Button = styled.button`
+    padding: 1em;
+    margin-left: 2em;
+    background-color: whitesmoke;
+    font-weight: 700;
+    color: #fc4c02;
+    border: none;
+    border-radius: 1.5em;
+    height: 3em;
+  `;*/
 
   return (
     <Context.Provider

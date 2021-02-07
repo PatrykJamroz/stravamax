@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import "../styles/MaxSpeed.css";
-import "../styles/Button.css";
+import {
+  ConvertButton,
+  ItemParagraphs,
+  Container,
+  IconImg,
+} from "./StyledComponents";
 
 function MaxSpeed(props) {
   const [unit, setUnit] = useState("metric");
@@ -12,17 +16,18 @@ function MaxSpeed(props) {
   //The maximum speed is in meters per second
 
   return (
-    <div className="MaxSpeed">
-      <h3>
+    <Container>
+      <ItemParagraphs style={{ marginBottom: 0 }}>
+        <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/speed.png" />
         Max speed:{" "}
         {unit === "imperial"
           ? `${(props.maxSpeed * 2.24).toFixed(1)} mph`
           : `${(props.maxSpeed * 3.599).toFixed(1)} kmh`}
-      </h3>
-      <button className="Button" onClick={changeUnit}>
+      </ItemParagraphs>
+      <ConvertButton onClick={changeUnit}>
         Change to {unit === "metric" ? "mph" : "kmh"}
-      </button>
-    </div>
+      </ConvertButton>
+    </Container>
   );
 }
 

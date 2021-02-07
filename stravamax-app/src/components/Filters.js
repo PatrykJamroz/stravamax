@@ -1,5 +1,25 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
+import styled from "styled-components";
+import { Button, IconImg } from "./StyledComponents";
+
+const ButtonFilters = styled(Button)`
+  @media (min-width: 376px) {
+    display: inline;
+  }
+`;
+
+const ButtonFiltersMid = styled(ButtonFilters)`
+  @media (min-width: 376px) {
+    margin: 0 0.5em;
+  }
+`;
+
+const ButtonFiltersLeft = styled(ButtonFilters)`
+  @media (min-width: 376px) {
+    margin: 0 0.5em 0 0;
+  }
+`;
 
 function Filters() {
   const {
@@ -9,18 +29,33 @@ function Filters() {
     sortByMaxSpeed,
     sortByMaxHr,
   } = useContext(Context);
+
   return (
     <div>
-      <label>
-        <button onClick={clearFilters}>All</button>
-        <button onClick={filterByRun}>Run</button>
-        <button onClick={filterByRide}>Ride</button>
-      </label>
-      <br />
-      <label>
-        <button onClick={sortByMaxSpeed}>Sort by Max Speed</button>
-        <button onClick={sortByMaxHr}>Sort by Max HR</button>
-      </label>
+      <div>
+        <ButtonFilters onClick={clearFilters}>
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/pulse.png" />
+          All
+        </ButtonFilters>
+        <ButtonFiltersMid onClick={filterByRun}>
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/running.png" />
+          Run
+        </ButtonFiltersMid>
+        <ButtonFilters onClick={filterByRide}>
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/cycling-road--v1.png" />
+          Ride
+        </ButtonFilters>
+      </div>
+      <div>
+        <ButtonFiltersLeft onClick={sortByMaxSpeed}>
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/speed.png" />
+          Sort by Max Speed
+        </ButtonFiltersLeft>
+        <ButtonFilters onClick={sortByMaxHr}>
+          <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/heart-with-pulse--v1.png" />
+          Sort by Max HR
+        </ButtonFilters>
+      </div>
     </div>
   );
 }
