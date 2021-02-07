@@ -1,5 +1,5 @@
 import React from "react";
-import { LogoTitle, IconImg } from "./components/StyledComponents";
+import { LogoTitle, IconImg } from "./StyledComponents";
 
 function Logo() {
   return (

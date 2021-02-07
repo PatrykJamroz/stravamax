@@ -44,7 +44,7 @@ function ContextProvider({ children }) {
   const getActivities = async () => {
     const reAuthorizePromise = await reAuthorize();
     const token = await reAuthorizePromise.json();
-    const allActivities = await fetchFewActivities(token.access_token); // fetchAllActivities / fetchFewActivities
+    const allActivities = await fetchAllActivities(token.access_token); // fetchAllActivities / fetchFewActivities
     try {
       setIsFetching(false);
       setActivities(allActivities);
@@ -110,19 +110,6 @@ function ContextProvider({ children }) {
       ? activities.filter((activity) => activity.type === filterType)
       : activities;
   }, [activities, filterType]);
-
-  //styled components
-
-  /*const Button = styled.button`
-    padding: 1em;
-    margin-left: 2em;
-    background-color: whitesmoke;
-    font-weight: 700;
-    color: #fc4c02;
-    border: none;
-    border-radius: 1.5em;
-    height: 3em;
-  `;*/
 
   return (
     <Context.Provider
