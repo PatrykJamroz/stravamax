@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "22e4e07054012e77fc7ed5c48e73fa00",
+    "revision": "56e805076cd777832232ceac88e6c2a9",
     "url": "/stravamax/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stravamax/static/js/2.45df49e7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ef64c1194a27e8e2c7f7",
-    "url": "/stravamax/static/js/main.e9b74672.chunk.js"
+    "revision": "157b8b32bc96055c6dfe",
+    "url": "/stravamax/static/js/main.35076a40.chunk.js"
   },
   {
     "revision": "4e3e9148bfa569066d40",
