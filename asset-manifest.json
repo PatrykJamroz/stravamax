@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/stravamax/static/js/main.1c250edb.chunk.js",
-    "main.js.map": "/stravamax/static/js/main.1c250edb.chunk.js.map",
+    "main.js": "/stravamax/static/js/main.4287aa39.chunk.js",
+    "main.js.map": "/stravamax/static/js/main.4287aa39.chunk.js.map",
     "runtime-main.js": "/stravamax/static/js/runtime-main.8ad9f78c.js",
     "runtime-main.js.map": "/stravamax/static/js/runtime-main.8ad9f78c.js.map",
     "static/js/2.45df49e7.chunk.js": "/stravamax/static/js/2.45df49e7.chunk.js",
     "static/js/2.45df49e7.chunk.js.map": "/stravamax/static/js/2.45df49e7.chunk.js.map",
     "index.html": "/stravamax/index.html",
-    "precache-manifest.87051a6dae3d707a21f0622f78b9f943.js": "/stravamax/precache-manifest.87051a6dae3d707a21f0622f78b9f943.js",
+    "precache-manifest.2a7ca1dc52069176dbd7782cf9d2b597.js": "/stravamax/precache-manifest.2a7ca1dc52069176dbd7782cf9d2b597.js",
     "service-worker.js": "/stravamax/service-worker.js",
     "static/js/2.45df49e7.chunk.js.LICENSE.txt": "/stravamax/static/js/2.45df49e7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8ad9f78c.js",
     "static/js/2.45df49e7.chunk.js",
-    "static/js/main.1c250edb.chunk.js"
+    "static/js/main.4287aa39.chunk.js"
   ]
 }
