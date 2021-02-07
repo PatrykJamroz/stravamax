@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/stravamax/static/js/main.1c250edb.chunk.js",
-    "main.js.map": "/stravamax/static/js/main.1c250edb.chunk.js.map",
-    "runtime-main.js": "/stravamax/static/js/runtime-main.8ad9f78c.js",
-    "runtime-main.js.map": "/stravamax/static/js/runtime-main.8ad9f78c.js.map",
-    "static/js/2.45df49e7.chunk.js": "/stravamax/static/js/2.45df49e7.chunk.js",
-    "static/js/2.45df49e7.chunk.js.map": "/stravamax/static/js/2.45df49e7.chunk.js.map",
-    "index.html": "/stravamax/index.html",
-    "precache-manifest.87051a6dae3d707a21f0622f78b9f943.js": "/stravamax/precache-manifest.87051a6dae3d707a21f0622f78b9f943.js",
-    "service-worker.js": "/stravamax/service-worker.js",
-    "static/js/2.45df49e7.chunk.js.LICENSE.txt": "/stravamax/static/js/2.45df49e7.chunk.js.LICENSE.txt"
+    "main.js": "/stravamax/stravamax-app/static/js/main.829723ff.chunk.js",
+    "main.js.map": "/stravamax/stravamax-app/static/js/main.829723ff.chunk.js.map",
+    "runtime-main.js": "/stravamax/stravamax-app/static/js/runtime-main.a5ce71b9.js",
+    "runtime-main.js.map": "/stravamax/stravamax-app/static/js/runtime-main.a5ce71b9.js.map",
+    "static/js/2.4129780e.chunk.js": "/stravamax/stravamax-app/static/js/2.4129780e.chunk.js",
+    "static/js/2.4129780e.chunk.js.map": "/stravamax/stravamax-app/static/js/2.4129780e.chunk.js.map",
+    "index.html": "/stravamax/stravamax-app/index.html",
+    "precache-manifest.21760e9d078bc445e9b15033da6060e6.js": "/stravamax/stravamax-app/precache-manifest.21760e9d078bc445e9b15033da6060e6.js",
+    "service-worker.js": "/stravamax/stravamax-app/service-worker.js",
+    "static/js/2.4129780e.chunk.js.LICENSE.txt": "/stravamax/stravamax-app/static/js/2.4129780e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ad9f78c.js",
-    "static/js/2.45df49e7.chunk.js",
-    "static/js/main.1c250edb.chunk.js"
+    "static/js/runtime-main.a5ce71b9.js",
+    "static/js/2.4129780e.chunk.js",
+    "static/js/main.829723ff.chunk.js"
   ]
 }
