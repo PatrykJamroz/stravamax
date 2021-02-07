@@ -23,15 +23,15 @@ export const Button = styled.button`
 `;
 
 export const ButtonTop = styled(Button)`
-  padding: 1em;
   background-color: #fc4c02;
   font-weight: 700;
-  color: whitesmoke;
-  border-radius: 1.5em;
-  height: 4em;
+  color: white;
+  border-radius: 1rem;
   text-decoration: none;
-  margin-bottom: 1em;
   outline: none;
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle;
   @media (max-width: 670px) {
     background-color: whitesmoke;
     color: #fc4c02;
