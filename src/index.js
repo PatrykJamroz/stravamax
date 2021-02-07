@@ -6,7 +6,7 @@ import { ContextProvider } from "./Context";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <ContextProvider>
       <App />
     </ContextProvider>
