@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import MaxSpeed from "./MaxSpeed";
 import ActivityName from "./ActivityName";
 import ActivityDate from "./ActivityDate";
@@ -38,13 +38,12 @@ function ActivityItem(props) {
         <a
           style={{
             color: "whitesmoke",
-            textDecoration: "none",
             textDecoration: "underline",
           }}
           href={`https://www.strava.com/activities/${props.activityData.id}`}
           target="_blank"
+          rel="noopener noreferrer"
         >
-          {" "}
           Go to activity
         </a>
       </ActivityURL>

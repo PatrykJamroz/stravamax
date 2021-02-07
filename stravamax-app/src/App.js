@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ActivitiesFeed from "./components/ActivitiesFeed";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import { Context } from "./Context";
 import { useContext } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { ButtonTop } from "./components/StyledComponents";
 import styled from "styled-components";
 
