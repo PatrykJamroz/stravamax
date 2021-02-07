@@ -18,7 +18,7 @@ function App() {
   return (
     <AppBody className="App">
       <Switch>
-        <Route exact path="/">
+        <Route exact path="https://github.com/PatrykJamroz/stravamax/">
           <Home />
         </Route>
         <Route path="/activities">
