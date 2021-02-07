@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import MaxSpeed from "./MaxSpeed";
 import ActivityName from "./ActivityName";
 import ActivityDate from "./ActivityDate";
@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const Item = styled.div`
   background-color: #fc4c02;
-  color: whitesmoke;
+  color: #ffffff;
   margin: 0 auto 10px auto;
   max-width: 480px;
   border-radius: 10px;
@@ -37,12 +37,12 @@ function ActivityItem(props) {
       <ActivityURL>
         <a
           style={{
-            color: "whitesmoke",
-            textDecoration: "none",
+            color: "#FFFFFF",
             textDecoration: "underline",
           }}
           href={`https://www.strava.com/activities/${props.activityData.id}`}
           target="_blank"
+          rel="noopener noreferrer"
         >
           {" "}
           Go to activity

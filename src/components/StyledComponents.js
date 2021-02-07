@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Logo from "./Logo";
 
 export const Button = styled.button`
   padding: 0 0.75em 0 0.75em;
@@ -7,7 +6,7 @@ export const Button = styled.button`
   font-weight: 700;
   font-family: helvetica;
   font-size: 1.25rem;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 1.5em;
   height: 2rem;
@@ -25,7 +24,7 @@ export const Button = styled.button`
 export const ButtonTop = styled(Button)`
   background-color: #fc4c02;
   font-weight: 700;
-  color: white;
+  color: #ffffff;
   border-radius: 1rem;
   text-decoration: none;
   outline: none;
@@ -33,7 +32,7 @@ export const ButtonTop = styled(Button)`
   display: table-cell;
   vertical-align: middle;
   @media (max-width: 670px) {
-    background-color: whitesmoke;
+    background-color: #ffffff;
     color: #fc4c02;
     border: 0.5px solid black;
   }
@@ -47,7 +46,7 @@ export const LogoTitle = styled.h1`
 `;
 
 export const ConvertButton = styled(Button)`
-  background-color: white;
+  background-color: #ffffff;
   color: #fc4c02;
   margin: 0 0 0 2em;
   width: 120px;
@@ -60,7 +59,7 @@ export const ItemParagraphs = styled.p`
   font-family: helvetica;
   font-size: 1rem;
   font-weight: 600;
-  color: white;
+  color: #ffffff;
 `;
 
 export const Container = styled.div`

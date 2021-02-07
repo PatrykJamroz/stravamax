@@ -3,28 +3,28 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LogoTitle, Button } from "./StyledComponents";
 
+const Container = styled.div`
+  background-color: whitesmoke;
+  max-width: 496px;
+  margin: 0 auto 10px auto;
+  border-radius: 10px;
+  border: 2px solid #fc4c02;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: helvetica;
+`;
+
+const Text = styled.p`
+  margin: 0 1rem 0 1rem;
+  text-align: justify;
+  text-indent: 1rem;
+  font-family: helvetica;
+`;
+
 export default function Home() {
-  const Container = styled.div`
-    background-color: whitesmoke;
-    max-width: 496px;
-    margin: 0 auto 10px auto;
-    border-radius: 10px;
-    border: 2px solid #fc4c02;
-  `;
-
-  const Title = styled.h1`
-    text-align: center;
-    font-size: 1.25rem;
-    font-family: helvetica;
-  `;
-
-  const Text = styled.p`
-    margin: 0 1rem 0 1rem;
-    text-align: justify;
-    text-indent: 1rem;
-    font-family: helvetica;
-  `;
-
   return (
     <Container>
       <LogoTitle>
