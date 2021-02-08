@@ -44,7 +44,6 @@ function ActivityItem(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {" "}
           Go to activity
         </a>
       </ActivityURL>
