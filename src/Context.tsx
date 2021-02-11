@@ -3,11 +3,21 @@ import { crede } from "./crede.js";
 
 const Context = React.createContext();
 
+interface Activity {
+  name: string;
+  distance: number;
+  max_speed: number;
+  max_heartrate: number;
+  type: FilterType;
+}
+
+type FilterType = "Ride" | "Run" | "";
+
 function ContextProvider({ children }) {
-  const [activities, setActivities] = useState([]);
-  const [filterType, setFilterType] = useState("");
-  const [isFetching, setIsFetching] = useState(true);
-  const [fetchFailed, setFetchFailed] = useState(false);
+  const [activities, setActivities] = useState<Array<Activity>>([]);
+  const [filterType, setFilterType] = useState<FilterType>("");
+  const [isFetching, setIsFetching] = useState<boolean>(true);
+  const [fetchFailed, setFetchFailed] = useState<boolean>(false);
 
   function scrollOnTop() {
     document.documentElement.scrollTop = 0;
@@ -41,9 +51,14 @@ function ContextProvider({ children }) {
 
   //Fetching activities from Strava and saving it to the state.
   const getActivities = async () => {
+    interface TokenI {
+      access_token: string;
+    }
     const reAuthorizePromise = await reAuthorize();
-    const token = await reAuthorizePromise.json();
-    const allActivities = await fetchAllActivities(token.access_token); // fetchAllActivities / fetchFewActivities
+    const token: TokenI = await reAuthorizePromise.json();
+    const allActivities: Array<Activity> = await fetchAllActivities(
+      token.access_token
+    ); // fetchAllActivities / fetchFewActivities
     try {
       setIsFetching(false);
       setActivities(allActivities);
@@ -71,14 +86,14 @@ function ContextProvider({ children }) {
     });
   };
 
-  async function fetchAllActivities(token) {
-    let page = 1;
-    const activities = [];
+  async function fetchAllActivities(token: String) {
+    let page: number = 1;
+    const activities: Array<Activity> = [];
 
     while (true) {
       const url = `https://www.strava.com/api/v3/athlete/activities?per_page=30&page=${page}&access_token=${token}`;
       const response = await fetch(url);
-      const data = await response.json();
+      const data: Array<Activity> = await response.json();
 
       page += 1;
       activities.push(...data);
@@ -94,7 +109,7 @@ function ContextProvider({ children }) {
   async function fetchFewActivities(token) {
     const url = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=30&access_token=${token}`;
     const response = await fetch(url);
-    const data = await response.json();
+    const data: Array<Activity> = await response.json();
     return data;
   }
 
