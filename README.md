@@ -31,6 +31,7 @@ Project is created with:
 
 ## Sources
 
+- [Strava API](https://developers.strava.com/docs/reference/)
 - [Strava API for Beginners](https://youtu.be/sgscChKfGyg)
 - [My Strava profile](https://www.strava.com/athletes/30743339)
 
