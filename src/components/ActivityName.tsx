@@ -8,7 +8,7 @@ const ItemParagraphsTitle = styled(ItemParagraphs)`
   margin-bottom: 0.5em;
 `;
 
-function ActivityName(props) {
+function ActivityName(props: { activityName: string }) {
   return (
     <ItemParagraphsTitle>
       <IconImg

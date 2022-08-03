@@ -2,8 +2,7 @@ import React from "react";
 import ActivitiesFeed from "./components/ActivitiesFeed";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import { Context } from "./Context";
-import { useContext } from "react";
+import { useAppContext } from "./Context";
 import { Switch, Route } from "react-router-dom";
 import { ButtonTop } from "./components/StyledComponents";
 import styled from "styled-components";
@@ -14,7 +13,8 @@ const AppBody = styled.div`
 `;
 
 function App() {
-  const { scrollOnTop } = useContext(Context);
+  const { scrollOnTop } = useAppContext();
+
   return (
     <AppBody className="App">
       <Switch>

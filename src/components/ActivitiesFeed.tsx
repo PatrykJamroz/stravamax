@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import ActivityItem from "./ActivityItem";
-import { Context } from "../Context";
+import { useAppContext } from "../Context";
 
 function ActivitiesFeed() {
-  const { activities, isFetching, fetchFailed } = useContext(Context);
+  const { activities, isFetching, fetchFailed } = useAppContext();
 
   return (
     <div className="ActivitiesFeed">

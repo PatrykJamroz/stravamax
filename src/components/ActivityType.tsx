@@ -1,7 +1,7 @@
 import React from "react";
 import { ItemParagraphs, IconImg } from "./StyledComponents";
 
-function ActivityType(props) {
+function ActivityType(props: { activityType: string }) {
   return (
     <ItemParagraphs>
       <IconImg
