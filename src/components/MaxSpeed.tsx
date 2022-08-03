@@ -6,7 +6,7 @@ import {
   IconImg,
 } from "./StyledComponents";
 
-function MaxSpeed(props) {
+function MaxSpeed(props: { maxSpeed: number }) {
   const [unit, setUnit] = useState("metric");
 
   function changeUnit() {

@@ -8,8 +8,8 @@ const ItemParagraphsDate = styled(ItemParagraphs)`
   font-weight: 300;
 `;
 
-function ActivityDate(props) {
-  const options = {
+function ActivityDate(props: { activityDate: string }) {
+  const options: Intl.DateTimeFormatOptions = {
     weekday: "long",
     day: "2-digit",
     month: "long",

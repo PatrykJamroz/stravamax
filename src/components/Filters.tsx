@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../Context";
+import { useAppContext } from "../Context";
 import styled from "styled-components";
 import { Button, IconImg } from "./StyledComponents";
 
@@ -28,7 +28,7 @@ function Filters() {
     clearFilters,
     sortByMaxSpeed,
     sortByMaxHr,
-  } = useContext(Context);
+  } = useAppContext();
 
   return (
     <div>

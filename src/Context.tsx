@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useLocation } from "react-router";
 import { crede } from "./crede.js";
 
-const Context = React.createContext();
+const AppContext = React.createContext<ContextProps>(undefined);
 
 interface Activity {
+  id: string;
   name: string;
   distance: number;
   max_speed: number;
@@ -13,7 +15,19 @@ interface Activity {
 
 type FilterType = "Ride" | "Run" | "";
 
-function ContextProvider({ children }) {
+interface ContextProps {
+  activities: Activity[];
+  isFetching: boolean;
+  fetchFailed: boolean;
+  scrollOnTop(): void;
+  filterByRide(): void;
+  filterByRun(): void;
+  clearFilters(): void;
+  sortByMaxSpeed(): void;
+  sortByMaxHr(): void;
+}
+
+function AppContextProvider({ children }) {
   const [activities, setActivities] = useState<Array<Activity>>([]);
   const [filterType, setFilterType] = useState<FilterType>("");
   const [isFetching, setIsFetching] = useState<boolean>(true);
@@ -56,7 +70,7 @@ function ContextProvider({ children }) {
     }
     const reAuthorizePromise = await reAuthorize();
     const token: TokenI = await reAuthorizePromise.json();
-    const allActivities: Array<Activity> = await fetchAllActivities(
+    const allActivities: Array<Activity> = await fetchFewActivities(
       token.access_token
     ); // fetchAllActivities / fetchFewActivities
     try {
@@ -115,9 +129,15 @@ function ContextProvider({ children }) {
 
   //////////////////////////////////////////////////////////////////////////////
 
+  const loc = useLocation();
+
+  console.log(loc);
+
   useEffect(() => {
-    getActivities();
-  }, []);
+    if (loc.pathname === "/activities") {
+      getActivities();
+    }
+  }, [loc]);
 
   const filteredActivities = useMemo(() => {
     return filterType
@@ -126,7 +146,7 @@ function ContextProvider({ children }) {
   }, [activities, filterType]);
 
   return (
-    <Context.Provider
+    <AppContext.Provider
       value={{
         activities: filteredActivities,
         isFetching,
@@ -140,8 +160,16 @@ function ContextProvider({ children }) {
       }}
     >
       {children}
-    </Context.Provider>
+    </AppContext.Provider>
   );
 }
 
-export { ContextProvider, Context };
+function useAppContext() {
+  const context = React.useContext(AppContext);
+  if (context === undefined) {
+    throw new Error("useAppContext must be used within a AppContextProvider");
+  }
+  return context;
+}
+
+export { AppContextProvider, useAppContext };

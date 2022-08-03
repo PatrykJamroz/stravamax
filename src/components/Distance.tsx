@@ -6,7 +6,7 @@ import {
   IconImg,
 } from "./StyledComponents";
 
-function Distance(props) {
+function Distance(props: { distance: number }) {
   const [unit, setUnit] = useState("metric");
 
   function changeUnit() {
