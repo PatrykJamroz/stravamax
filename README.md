@@ -25,9 +25,9 @@ Feel free to visit: [Public version](https://patrykjamroz.github.io/stravamax/)
 
 Project is created with:
 
-- ReactJS 16.13.1
-- Router Router 5.2.0
-- Styled Components 5.2.1
+- ReactJS 16
+- Router Router 5
+- Styled Components 5
 
 ## Sources
 
