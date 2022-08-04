@@ -1,7 +1,7 @@
 import React from "react";
 import { ItemParagraphs, IconImg } from "./StyledComponents";
 
-function ActivityType(props: { activityType: string }) {
+export function ActivityType(props: { activityType: string }) {
   return (
     <ItemParagraphs>
       <IconImg
@@ -17,5 +17,3 @@ function ActivityType(props: { activityType: string }) {
     </ItemParagraphs>
   );
 }
-
-export default ActivityType;

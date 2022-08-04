@@ -4,13 +4,15 @@ import { crede } from "./crede.js";
 
 const AppContext = React.createContext<ContextProps>(undefined);
 
-interface Activity {
+export interface Activity {
   id: string;
   name: string;
   distance: number;
   max_speed: number;
   max_heartrate: number;
   type: FilterType;
+  start_date: string;
+  total_elevation_gain: number;
 }
 
 type FilterType = "Ride" | "Run" | "";
@@ -32,6 +34,7 @@ function AppContextProvider({ children }) {
   const [filterType, setFilterType] = useState<FilterType>("");
   const [isFetching, setIsFetching] = useState<boolean>(true);
   const [fetchFailed, setFetchFailed] = useState<boolean>(false);
+  const loc = useLocation();
 
   function scrollOnTop() {
     document.documentElement.scrollTop = 0;
@@ -70,7 +73,7 @@ function AppContextProvider({ children }) {
     }
     const reAuthorizePromise = await reAuthorize();
     const token: TokenI = await reAuthorizePromise.json();
-    const allActivities: Array<Activity> = await fetchFewActivities(
+    const allActivities: Activity[] = await fetchFewActivities(
       token.access_token
     ); // fetchAllActivities / fetchFewActivities
     try {
@@ -100,43 +103,40 @@ function AppContextProvider({ children }) {
     });
   };
 
-  async function fetchAllActivities(token: String) {
-    let page: number = 1;
-    const activities: Array<Activity> = [];
+  // async function fetchAllActivities(token: String) {
+  //   let page: number = 1;
+  //   const activities: Array<Activity> = [];
 
-    while (true) {
-      const url = `https://www.strava.com/api/v3/athlete/activities?per_page=30&page=${page}&access_token=${token}`;
-      const response = await fetch(url);
-      const data: Array<Activity> = await response.json();
+  //   while (true) {
+  //     const url = `https://www.strava.com/api/v3/athlete/activities?per_page=30&page=${page}&access_token=${token}`;
+  //     const response = await fetch(url);
+  //     const data: Array<Activity> = await response.json();
 
-      page += 1;
-      activities.push(...data);
+  //     page += 1;
+  //     activities.push(...data);
 
-      if (data.length < 30) {
-        return activities;
-      }
-    }
-  }
+  //     if (data.length < 30) {
+  //       return activities;
+  //     }
+  //   }
+  // }
 
   //FETCH ONLY FEW ACTIVITIES - FOR DEVELOPMENT - TO NOT EXCEED STRAVA LIMITS//
 
   async function fetchFewActivities(token) {
     const url = `https://www.strava.com/api/v3/athlete/activities?page=1&per_page=30&access_token=${token}`;
     const response = await fetch(url);
-    const data: Array<Activity> = await response.json();
+    const data: Activity[] = await response.json();
     return data;
   }
 
   //////////////////////////////////////////////////////////////////////////////
 
-  const loc = useLocation();
-
-  console.log(loc);
-
   useEffect(() => {
     if (loc.pathname === "/activities") {
       getActivities();
     }
+    // eslint-disable-next-line
   }, [loc]);
 
   const filteredActivities = useMemo(() => {

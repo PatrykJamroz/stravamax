@@ -22,6 +22,9 @@ export const Button = styled.button`
 `;
 
 export const ButtonTop = styled(Button)`
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
   background-color: #fc4c02;
   font-weight: 700;
   color: #ffffff;
@@ -71,4 +74,65 @@ export const Container = styled.div`
 export const IconImg = styled.img`
   vertical-align: middle;
   margin: 0 0.5em 3px 0;
+`;
+
+export const Nav = styled.div`
+  margin: 0 auto 10px auto;
+  text-align: center;
+  max-width: 496px;
+  border-radius: 10px;
+  border: 2px solid #fc4c02;
+  color: #fc4c02;
+  font-weight: 700;
+  background-color: whitesmoke;
+`;
+
+export const ButtonHome = styled(Button)`
+  margin-top: 0;
+`;
+
+export const ButtonFilters = styled(Button)`
+  @media (min-width: 376px) {
+    display: inline;
+  }
+`;
+
+export const ButtonFiltersMid = styled(ButtonFilters)`
+  @media (min-width: 376px) {
+    margin: 0 0.5em;
+  }
+`;
+
+export const ButtonFiltersLeft = styled(ButtonFilters)`
+  @media (min-width: 376px) {
+    margin: 0 0.5em 0 0;
+  }
+`;
+
+export const Item = styled.div`
+  background-color: #fc4c02;
+  color: #ffffff;
+  margin: 0 auto 10px auto;
+  max-width: 480px;
+  border-radius: 10px;
+  padding: 10px;
+`;
+
+export const ActivityURL = styled.div`
+  margin: 0;
+  font-family: helvetica;
+  font-size: 0.75rem;
+  font-weight: 300;
+`;
+
+export const ItemParagraphsTitle = styled(ItemParagraphs)`
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+`;
+
+export const ItemParagraphsDate = styled(ItemParagraphs)`
+  font-size: 0.75rem;
+  margin: 0 0 2em 0.3em;
+  font-weight: 300;
 `;

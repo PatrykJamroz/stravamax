@@ -1,7 +1,7 @@
 import React from "react";
 import { ItemParagraphs, IconImg } from "./StyledComponents";
 
-function MaxHr(props: { maxHr: string }) {
+export function MaxHr(props: { maxHr: number }) {
   return (
     <ItemParagraphs>
       <IconImg src="https://img.icons8.com/ios-filled/20/ffffff/heart-with-pulse--v1.png" />
@@ -9,5 +9,3 @@ function MaxHr(props: { maxHr: string }) {
     </ItemParagraphs>
   );
 }
-
-export default MaxHr;
