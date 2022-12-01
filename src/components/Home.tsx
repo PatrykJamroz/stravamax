@@ -24,7 +24,7 @@ const Text = styled.p`
   font-family: helvetica;
 `;
 
-export default function Home() {
+export function Home() {
   return (
     <Container>
       <LogoTitle>

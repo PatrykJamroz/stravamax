@@ -1,14 +1,7 @@
 import React from "react";
-import { ItemParagraphs, IconImg } from "./StyledComponents";
-import styled from "styled-components";
+import { IconImg, ItemParagraphsDate } from "./StyledComponents";
 
-const ItemParagraphsDate = styled(ItemParagraphs)`
-  font-size: 0.75rem;
-  margin: 0 0 2em 0.3em;
-  font-weight: 300;
-`;
-
-function ActivityDate(props: { activityDate: string }) {
+export function ActivityDate(props: { activityDate: string }) {
   const options: Intl.DateTimeFormatOptions = {
     weekday: "long",
     day: "2-digit",
@@ -23,5 +16,3 @@ function ActivityDate(props: { activityDate: string }) {
     </ItemParagraphsDate>
   );
 }
-
-export default ActivityDate;

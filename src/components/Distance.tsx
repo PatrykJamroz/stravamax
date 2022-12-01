@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Unit } from "./MaxSpeed";
 import {
   ConvertButton,
   ItemParagraphs,
@@ -6,8 +7,8 @@ import {
   IconImg,
 } from "./StyledComponents";
 
-function Distance(props: { distance: number }) {
-  const [unit, setUnit] = useState("metric");
+export function Distance(props: { distance: number }) {
+  const [unit, setUnit] = useState<Unit>("metric");
 
   function changeUnit() {
     setUnit(unit === "metric" ? "imperial" : "metric");
@@ -28,5 +29,3 @@ function Distance(props: { distance: number }) {
     </Container>
   );
 }
-
-export default Distance;

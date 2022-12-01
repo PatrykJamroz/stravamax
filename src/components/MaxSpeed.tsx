@@ -6,8 +6,10 @@ import {
   IconImg,
 } from "./StyledComponents";
 
-function MaxSpeed(props: { maxSpeed: number }) {
-  const [unit, setUnit] = useState("metric");
+export type Unit = "metric" | "imperial";
+
+export function MaxSpeed(props: { maxSpeed: number }) {
+  const [unit, setUnit] = useState<Unit>("metric");
 
   function changeUnit() {
     setUnit(unit === "imperial" ? "metric" : "imperial");
@@ -30,5 +32,3 @@ function MaxSpeed(props: { maxSpeed: number }) {
     </Container>
   );
 }
-
-export default MaxSpeed;

@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 src/crede.js
+src/crede.ts
 src/credentials.json
 src/AppBackup.js

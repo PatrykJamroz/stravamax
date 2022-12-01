@@ -1,14 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import { ItemParagraphs, IconImg } from "./StyledComponents";
+import { IconImg, ItemParagraphsTitle } from "./StyledComponents";
 
-const ItemParagraphsTitle = styled(ItemParagraphs)`
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5em;
-`;
-
-function ActivityName(props: { activityName: string }) {
+export function ActivityName(props: { activityName: string }) {
   return (
     <ItemParagraphsTitle>
       <IconImg
@@ -19,5 +12,3 @@ function ActivityName(props: { activityName: string }) {
     </ItemParagraphsTitle>
   );
 }
-
-export default ActivityName;
